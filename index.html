@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Who Wants to Be a Millionaire</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Who Wants to Be a Millionaire</h1>
+  </div>
+
+  <div class="quiz-area">
+    <div class="question-area">
+      <div id="question">Question will appear here.</div>
+      <div id="question-price"></div>
+    </div>
+
+    <div class="answers-area">
+      <button class="answer-button" id="answer-a" onclick="checkAnswer('a')">A: </button>
+      <button class="answer-button" id="answer-b" onclick="checkAnswer('b')">B: </button>
+      <button class="answer-button" id="answer-c" onclick="checkAnswer('c')">C: </button>
+      <button class="answer-button" id="answer-d" onclick="checkAnswer('d')">D: </button>
+    </div>
+  </div>
+
+  <div class="money-ladder" style="display: none">
+    <ul>
+      <li data-amount="1000000">15 - $1,000,000</li>
+      <li data-amount="500000">14 - $500,000</li>
+      <li data-amount="125000">13 - $125,000</li>
+      <li data-amount="64000">12 - $64,000</li>
+      <li data-amount="32000">11 - $32,000</li>
+      <li data-amount="16000">10 - $16,000</li>
+      <li data-amount="8000">9 - $8,000</li>
+      <li data-amount="4000">8 - $4,000</li>
+      <li data-amount="2000">7 - $2,000</li>
+      <li data-amount="1000">6 - $1,000</li>
+      <li data-amount="500">5 - $500</li>
+      <li data-amount="300">4 - $300</li>
+      <li data-amount="200">3 - $200</li>
+      <li data-amount="100">2 - $100</li>
+      <li data-amount="50">1 - $50</li>
+    </ul>
+  </div>
+
+  <div class="lifelines">
+    <button id="fifty-fifty" onclick="useFiftyFifty()">50:50</button>
+    <button id="ask-audience" style="display: none;" onclick="useAskTheAudience()">Ask Audience</button>
+    <button id="phone-a-friend" onclick="usePhoneAFriend()">Ask the teacher</button>
+  </div>
+
+  <button id="start-button" onclick="startQuiz()">START</button>
+  <div id="current-winnings" style="display:none">Current Winnings: $0</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
