@@ -240,8 +240,8 @@ function checkAnswer(answer) {
     if (answer === currentQuestion.correctAnswer) {
         const selectedAnswerElement = document.getElementById('answer-' + answer);
         selectedAnswerElement.classList.add('correct-answer');
-        currentWinnings = parseInt(document.querySelector('.money-ladder li:nth-last-child(' + (questions.length - currentQuestionIndex) + ')').dataset.amount);
-
+        currentWinnings = currentQuestion.price;
+        updateWinnings();
         setTimeout(() => {
             currentQuestionIndex++;
             if (currentQuestionIndex < questions.length) {
@@ -264,9 +264,10 @@ function checkAnswer(answer) {
             alert("You are eliminated");
             currentQuestionIndex++;
             if (currentQuestionIndex < questions.length) {
-                isEliminated = false;
+                isEliminated = true;
                 loadQuestion();
                 updateWinnings();
+                endGame(true);
             } else {
                 endGame(false);
             }
@@ -320,6 +321,14 @@ function useFiftyFifty() {
 
     fiftyFiftyUsed--;
     if(fiftyFiftyUsed < 0) fiftyFiftyButton.disabled = true;
+}
+function useAskTheAudience(){
+    if((askAudienceUsed===false)|| isEliminated) {
+        alert("60% A\ 20% B \ 30% C \ 10% D");
+    askAudienceUsed===true;}
+        else{
+        askAudienceButton.disabled = true;
+    }
 }
 
 function usePhoneAFriend() {
